@@ -16,7 +16,6 @@
 docker build -f gpu.Dockerfile --network=host -t science_pack:v3 .
 # step 2: docker run
 docker run -v {folder_path}:/home/jupyter/ --network=host -it --name jiwon science_pack:v4
-docker --version
 ```
 
 ## Reference 
