@@ -1,11 +1,11 @@
-# Docker Env
+# Docker env
 - Ubuntu : 18.04
 - GPU : RTX3090 
 - CUDA : 11.2.1 
 - CUDNN : 8
 - PYTHON : 3.8
-- PYTORCH : 1.9.0
-- TENSORFLOW : 2.6.0
+- Pytorch : 1.9.0
+- Tensorflow : 2.6.0
 - MMCV : 1.6.0
 
 
@@ -18,6 +18,9 @@ docker run -v {folder_path}:/home/jupyter/ --network=host -it \
 # step 3 : 
 jupyter notebook --allow-root --port 9000
 ```
+
+## Docker hub
+https://hub.docker.com/repository/docker/zz0622/science_pack
 
 ## Reference 
 https://github.com/teddylee777/docker-kaggle-ko
