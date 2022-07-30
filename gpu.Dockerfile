@@ -90,10 +90,10 @@ RUN pip install setuptools && \
     pip install Pillow && \
     pip install tqdm && \
     pip install gensim && \
-    pip install nltk && \
-    pip install wordcloud && \
     apt-get install -y graphviz && pip install graphviz && \
     pip install cupy-cuda112
+
+RUN conda install notebook
 
 # Pytorch 설치
 RUN pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
@@ -114,7 +114,7 @@ RUN pip install "sentencepiece<0.1.90" wandb tensorboard albumentations pydicom 
     catalyst captum
 
 RUN pip install fastai && \
-    conda install -c rapidsai -c nvidia -c numba -c conda-forge cudf=21.08 python=3.7 cudatoolkit=11.2
+    conda install -c rapidsai -c nvidia -c numba -c conda-forge cudf=21.08 python=3.8 cudatoolkit=11.2
 
 # cmake 설치 (3.16)
 RUN wget https://cmake.org/files/v3.16/cmake-3.16.2.tar.gz && \
@@ -129,7 +129,7 @@ ENV PATH=/usr/local/bin:${PATH}
 # 나눔고딕 폰트 설치
 # matplotlib에 Nanum 폰트 추가
 RUN apt-get install fonts-nanum* && \
-    cp /usr/share/fonts/truetype/nanum/Nanum* /opt/conda/envs/py38/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/ && \
+    cp /usr/share/fonts/truetype/nanum/Nanum* /opt/conda/envs/py38/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/ && \
     fc-cache -fv && \
     rm -rf ~/.cache/matplotlib/*
 
@@ -162,8 +162,9 @@ ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH_NO_STUBS"
 # add jupyter config file & test.ipynb
 COPY setting/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
 RUN mkdir /root/.jupyter/custom
+RUN mkdir /home/jupyter
 COPY setting/custom.js /root/.jupyter/custom/custom.js
-COPY setting /home/setting
+COPY setting /home/jupyter/setting
 # 기본
 EXPOSE 8888
 EXPOSE 9000
