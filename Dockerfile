@@ -88,10 +88,10 @@ RUN pip install setuptools && \
 
 RUN conda install notebook
 
-# Pytorch 설치
-RUN pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+# DL Framework install
+RUN pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
 RUN pip install tensorflow==2.6.0
-RUN pip install mmcv-full==1.6.0 -f https://download.openmmlab.com/mmcv/dist/cu110/torch1.7.0/index.html
+RUN pip install mmcv-full==1.6.0 -f https://download.openmmlab.com/mmcv/dist/cu110/torch1.9.0/index.html
 
 
 RUN pip install --upgrade cython && \

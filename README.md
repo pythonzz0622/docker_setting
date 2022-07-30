@@ -4,7 +4,7 @@
 - CUDA : 11.2.1 
 - CUDNN : 8
 - PYTHON : 3.8
-- PYTORCH : 1.7.1
+- PYTORCH : 1.9.0
 - TENSORFLOW : 2.6.0
 - MMCV : 1.6.0
 
