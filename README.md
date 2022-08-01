@@ -11,7 +11,7 @@
 
 ```bash
 # step 1: docker build
-docker build -f gpu.Dockerfile --network=host -t {docker_image}:{tag} .
+docker build -f Dockerfile --network=host -t {docker_image}:{tag} .
 # step 2: docker run
 docker run -v {folder_path}:/home/jupyter/ --network=host -it \
 -p 8880-8889:8880-8889 --name {container-name} science_pack:v4
