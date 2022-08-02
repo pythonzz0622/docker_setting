@@ -1,3 +1,7 @@
+# 서버 사용 정리
+https://url.kr/lnu6hj
+# 서버 관리자 교육 
+https://url.kr/p9j7fo
 # Docker env
 - Ubuntu : 18.04
 - GPU : RTX3090 
