@@ -3,6 +3,7 @@ https://url.kr/lnu6hj
 # 서버 관리자 교육 
 https://url.kr/p9j7fo
 # Docker env
+- Nvidia-driver : 460.91.03
 - Ubuntu : 18.04
 - GPU : RTX3090 
 - CUDA : 11.2.1 
