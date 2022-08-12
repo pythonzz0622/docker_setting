@@ -90,7 +90,8 @@ RUN conda install notebook
 
 # DL Framework install
 RUN pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
-RUN pip install tensorflow==2.6.0
+# RUN pip install tensorflow==2.6.0
+RUN pip install tensorflow==2.8.0
 RUN pip install mmcv-full==1.6.0 -f https://download.openmmlab.com/mmcv/dist/cu110/torch1.9.0/index.html
 
 
