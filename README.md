@@ -21,7 +21,7 @@ docker build -f Dockerfile --network=host -t {docker_image}:{tag} .
 docker run -v {folder_path}:/home/jupyter/ --network=host --gpus all -itd \
 -p 8880-8889:8880-8889 --name {container-name} science_pack:v1
 # step 3: 
-docker exec -it science_pack:v1
+docker exec -it {container-name} /bin/bash
 # step 4:
 jupyter notebook --allow-root --port 9000
 ```
