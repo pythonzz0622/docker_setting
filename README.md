@@ -36,3 +36,5 @@ https://hub.docker.com/repository/docker/zz0622/science_pack
 
 ## Reference 
 https://github.com/teddylee777/docker-kaggle-ko
+
+김채민 바보
