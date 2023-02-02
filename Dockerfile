@@ -70,7 +70,7 @@ ENV CONDA_PREFIX /opt/conda/envs/py38
 RUN pip install setuptools && \
     pip install mkl && \
     pip install pymysql && \
-    pip install numpy && \
+    pip install numpy==1.23.0 && \
     pip install scipy && \
     pip install pandas && \
     pip install jupyter notebook && \
@@ -160,22 +160,10 @@ RUN pip uninstall -y lightgbm && \
     cd /usr/local/src/lightgbm/LightGBM/python-package && python setup.py install --precompile
 
 # soynlp, KR-WordRank, soyspacing, customized_konlpy 설치
-RUN pip install soynlp && \
-    pip install krwordrank && \
-    pip install soyspacing && \
-    pip install customized_konlpy
+RUN pip install -U jupyter-server==1.9.0
 
 # Remove the CUDA stubs.
 ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH_NO_STUBS"
-
-# locale 설정
-RUN apt-get update && apt-get install -y locales tzdata && \
-    locale-gen ko_KR.UTF-8 && locale -a && \
-    ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
-
-RUN apt-get autoremove -y && apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    conda clean -a -y
 
 # LANG 환경변수 설정
 ENV LANG ko_KR.UTF-8

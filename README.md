@@ -19,7 +19,7 @@ https://url.kr/p9j7fo
 docker build -f Dockerfile --network=host -t zz0622/{docker_image}:{tag} .
 # step 2: docker run
 docker run -v {folder_path}:/home/jupyter/ --network=host --gpus all -itd \
--p 8880-8889:8880-8889 --name {container-name} science_pack:v1
+ --name {container-name} science_pack:v1
 # step 3: 
 docker exec -it {container-name} /bin/bash
 # jupyter notebook 실행 (docker에서 실행)
